@@ -1,0 +1,297 @@
+@CHARSET "ISO-8859-1";
+
+@media (max-width: 1920px ) {
+	/* #### START NAVBAR  #### */
+	.header {
+		border-color: none;
+		position: fixed;
+		transition: height 0.3s linear 0s, padding 0.3s linear 0s;
+		overflow: hidden;
+	}
+
+	.nav-bar-blue {
+		background-color: none;
+		border: none;
+	}
+
+	.glyphicon glyphicon-home {
+		background-color: #fff;
+	}
+
+	.navbar {
+		background-color: none;
+		border-color: none;
+	}
+
+	.navbar-default, .navbar-mtd, .container-fluid {
+		border: none;
+		background: none;
+	}
+
+	.navbar-header {
+		background-color: none;
+	}
+
+	.navbar-brand-logoWrapper {
+		width: 100px;
+		height: 75px;
+	}
+
+	.navbar-brand > img {
+		width: 75px;
+		height: 75px;
+	}
+
+	.navbar-brand-img-size {
+		height: 75px;
+	}
+
+	/* #### START NAVAR UL  ####  */
+	.nav .navbar-nav ul > li a {
+		color: #fff;
+	}
+
+	.dropdown-menu {
+		background-color: #2980b9;
+	}
+
+	/* #### START CAROUSEL / SLIDER   ##### */
+	.hero-row {
+		margin: 46px auto 0;
+		width: 1200px;
+	}
+
+	/* #### START MAIN CONTENT #### */
+	.bg-asphalt {
+		background-color: #34495e;
+	}
+
+	.bg-tan {
+		/* background-color: #e67e22;  */
+		min-height: 375px;
+		top: 110px;
+	}
+
+	.bg-emerald {
+		background-color: #2ecc71;
+		opacity: 0.7;
+		top: 25px;
+	}
+
+	.bg-porcelain {
+		background-color: #A88C5C;
+	}
+
+	.bg-asbesto {
+		background-color: #7f8c8d;
+	}
+
+	.bg-carrot {
+		background-color: #e67e22;
+	}
+
+	.bg-white {
+		background-color: #ffffff;
+	}
+
+	.bg-cloud {
+		background-color: #ecf0f1;
+		position: relative;
+	}
+
+	.myphoto-parallax {
+		/* The image used */
+		background-image: url("../../../assets/images/marvin_the_martian.jpg");
+
+		/* Set a specific height */
+		min-height: 250px;
+
+		/* Create the parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.recent-work-parallax {
+		/* The image used */
+		background-image: url("../../../assets/images/marvin.jpg");
+
+		/* Set a specific height */
+		min-height: 450px;
+
+		/* Create the parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.skills-parallax {
+		/* The image used */
+		background-image: url("../../../assets/images/Success_Aint_Pretty.JPG");
+		/* Set a specific height */
+		min-height: 400px;
+
+		/* Create the parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.about-me-parallax {
+		/* The image used */
+		background-image: url("../../../assets/images/the_birth.jpg");
+
+		/* Set a specific height */
+		min-height: 400px;
+
+		/* Create the parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.tier {
+		width: 80%;
+		margin: 0 auto 0;
+	}
+
+	.work-thumbnail {
+		width: 350px;
+		text-align: center;
+	}
+
+	.skillsWrapper {
+		background-color: #5C97BF;
+	}
+
+	.skills-experience {
+		width: 80%;
+		margin: 0 auto 0;
+	}
+
+	.aboutMeWrapper {
+		background-color: #F2F1EF;
+	}
+
+	.slider-carousel {
+		position: relative;
+		margin-top: 10px;
+		width: 1366px;
+	}
+
+	.slideshow-size {
+		width: 1366px;
+	}
+
+	h2 {
+		color: #fff;
+	}
+
+	.freelance-text-h2 {
+		color: #000;
+	}
+
+	.home-thumbnails:hover {
+		background-color: #D8D8D8;
+		color: #fff;
+	}
+
+	/* #### START FOOTER  #### */
+	.foot-wrapper {
+		background: url('../../../assets/images/black_brick_wall_footer_background.png') no-repeat;
+		/*background-color:#3498db;*/
+		color: #fff;
+	}
+
+	.foot a:active {
+		color: red;
+	}
+
+	.foot a:visited {
+		color: red;
+	}
+	.work-thumbnail h3{
+		font-size: 20px;
+		color: #545454;
+	}
+}
+
+@media (max-width: 1600px ){
+	/* #### START CAROUSEL / SLIDER   ##### */
+	.hero-row{
+		margin: 46px auto 0;
+		width: 1200px;
+	}
+}
+
+@media (max-width: 768px ){
+	.bg-tan{
+	 	/* background-color: #e67e22;  */
+		min-height: 290px;
+		top: 110px;
+	}
+	.work-thumbnail {
+		width: 100%;
+		text-align: center;
+		margin: 0 auto 10px;
+	}
+	.myphoto-parallax,
+	.recent-work-parallax,
+	.skills-parallax,
+	.about-me-parallax{
+		display: none;
+	}
+}
+@media (max-width: 640px){
+	.bg-tan{
+	 	/* background-color: #e67e22;  */
+		min-height: 245px;
+		top: 110px;
+	}
+	
+}
+@media(max-width: 568px){
+	.work-thumbnail {
+		width: 74%;
+	}
+}
+@media (max-width: 375px ){
+	.bg-tan{
+	 	/* background-color: #e67e22;  */
+		min-height: 140px;
+		top: 110px;
+	}
+}
+@media (max-width: 360px ){
+	.bg-tan{
+	 	/* background-color: #e67e22;  */
+		min-height: 132px;
+		top: 110px;
+	}.
+	.work-thumbnail {
+		 width: 337px;
+	}
+}
+@media (max-width: 320px ){
+	.bg-tan{
+	 	/* background-color: #e67e22;  */
+		min-height: 118px;
+		top: 110px;
+	}
+	.caption{
+		margin: 10px auto 0;
+	}
+	.work-thumbnail {
+		width: 82%;
+		margin: 0 auto 5px;
+	}
+
+	.work-thumbnail h3{
+		font-size: 16px;
+		color: #545454;
+	}
+}

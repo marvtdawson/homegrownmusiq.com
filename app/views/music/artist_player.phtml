@@ -1,0 +1,52 @@
+<!--div class="artist-profile-music-player">
+    <div class="artist-profile-project-image">Artist Image</div>
+    <div class="artist-profile-control-wrapper">
+        <audio controls autoplay>
+            <source src="/assets/m3Mb3rz/1/media/music/projects/platinumsellersbeats+goldfreedl.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="player-profile-icons-wrapper">
+        <div class="vlog-social-icon">
+            <a href="#">
+                <i class="fa fa-twitter fa-2x"></i>
+            </a>
+        </div>
+        <div class="vlog-social-icon">
+            <a href="#">
+                <i class="fa fa-facebook fa-2x"></i>
+            </a>
+        </div>
+    </div>
+</div-->
+{% for key, displaytracks in artistMusicTracks %}
+    <div class="artist-profile-music-player">
+        <div class="artist-profile-project-image">Artist Image</div>
+        <div class="artist-profile-control-wrapper">
+            <audio controls autoplay>
+                <source src="{{ displaytracks }}" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="player-profile-icons-wrapper">
+            <div class="vlog-social-icon">
+                <a href="#">
+                    <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </div>
+            <div class="vlog-social-icon">
+                <a href="#">
+                    <i class="fa fa-facebook fa-2x"></i>
+                </a>
+            </div>
+            <!--div class="vlog-social-icon">
+                <a href="#">
+                    <i class="fa fa-snapchat fa-2x"></i>
+                </a>
+            </div-->
+            <!--div class="vlog-social-icon">
+                <a href="#">
+                    <i class="fa fa-instagram fa-2x"></i>
+                </a>
+            </div-->
+        </div>
+    </div>
+{% endfor %}

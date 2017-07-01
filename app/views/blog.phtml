@@ -1,0 +1,9 @@
+{% extends "template/layout/basetemplate.phtml" %}
+{% block maincontent %}
+    <!--Start Tier 1 Content Div-->
+    <div class = "main-content-tier1-wrapper" >
+        <p> {{ pageContent }}  </p >
+        {% include '/partials/blog_subscribe.phtml' %}
+
+    </div >
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends "template/layout/radiotemplate.phtml" %}
+{% block hgmplayer %}
+    <div class="radio-stations-style-wrapper">
+        <div class="radio-stations-style-image-wrapper">
+            Channel style:
+        </div>
+        <div class="radio-stations-select-style-wrapper">
+            Other Hip Hop Styles
+        </div>
+
+    </div>
+    <div class="radio-station-artist-playing-wrapper">
+        <!-- START NOW PLAYING -->
+        <div class="radio-station-now-playing-wrapper">
+            <div class="nowPlaying-text-wrapper">
+                <span class="nowPlaying-inner-text">Now Playing:</span>
+                <span id="songTitle" class="nowPlaying-outer-text">Where You Are</span>
+            </div>
+            <div class="radio-station-artist-pic-wrapper">
+                <img class="radio-station-artist-pic-size"
+                     src="/assets/m3Mb3rz/1/images/thumbs/piano.jpg"
+                     alt="{{ artistName }} Photo" title="">
+            </div>
+        </div>
+        <!-- Start Artist Info -->
+        <div class="radio-station-artist-playing-content-wrapper">
+            <div class="radio-station-artist-info-wrapper">
+                <div class="artist-info-text-outer">Artist:<span class="artist-info-text-inner"> Doujah Raze</span></div>
+                <div class="artist-info-text-outer">CD:<span class="artist-info-text-inner"> Doujah Raze</span></div>
+                <div class="artist-info-text-outer">Home:<span class="artist-info-text-inner">Bronx</span></div>
+                <div class="artist-info-text-outer">State:<span class="artist-info-text-inner"> New York</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- START CONTROLS -->
+<div class="controls-container">
+    <div class="controls-wrapper" id="hgm-player">
+        <button id="playpausebtn"></button>
+        <div class="current-time-box">
+            <span id="curtimetext">00:00</span>
+        </div>
+        <div class="seekslider-wrapper">
+            <input id="seekslider" type="range" min="0" max="100" value="0" step="1">
+        </div>
+        <div class="duration-time-box">
+            <span id="durtimetext">00:00</span>
+        </div>
+        <button id="mutebtn"></button>
+        <div class="volumslider-wrapper">
+            <input id="volumeslider" type="range" min="0" max="100" value="50" step="1">
+        </div>
+    </div>
+</div>
+<script>
+    var audio, playbtn, mutebtn, seekslider, volumeslider, seekto, curtimetext, durtimetext, seeking=false;
+
+    //document.getElementById("hgm-player").onload = function() {initHGMPlayer()};
+    //var playPromise = document.querySelector('#playpausebtn').play();
+
+    // In browsers that don’t yet support this functionality,
+    // playPromise won’t be defined.
+   /* if (playPromise !== undefined) {
+        playPromise.then(function() {
+            // Automatic playback started!
+        }).catch(function(error) {
+            // Automatic playback failed.
+            // Show a UI element to let the user manually start playback.
+        });
+    }*/
+
+    function initHGMPlayer(){
+        audio = new Audio();
+        audio.src = "/../m3Mb3rz/1/media/music/projects/badbloodtrapbeat.mp3";
+        audio.loop = true;
+        audio.play();
+        // Set object references
+        playbtn = document.getElementById("playpausebtn");
+        mutebtn = document.getElementById("mutebtn");
+        seekslider = document.getElementById("seekslider")
+        volumeslider = document.getElementById("volumeslider")
+        curtimetext = document.getElementById("curtimetext");
+        durtimetext = document.getElementById("durtimetext");
+
+        // Add Event Handling
+        playbtn.addEventListener("click", playPause);
+        mutebtn.addEventListener("click", mute);
+        seekslider.addEventListener("mousedown", function(event){seeking=true; seek(event); });
+        seekslider.addEventListener("mouseover", function(event){seek(event); });
+        seekslider.addEventListener("mouseup", function(){seeking=false;});
+        volumeslider.addEventListener("mousemove", setvolume);
+
+        audio.addEventListener("timeupdate", function(){seektimeupdate(); });
+
+        // Functions
+        function playPause(){
+            if(audio.paused){
+                audio.play();
+                playbtn.style.background = "url('/assets/images/player/pause_button.png') no-repeat";
+            } else {
+                audio.pause();
+                playbtn.style.background = "url('/assets/images/player/play_button.png') no-repeat";
+            }
+        }
+        function mute(){
+            if(audio.muted){
+                audio.muted = false;
+                mutebtn.style.background = "url('/assets/images/player/mute_button.png') no-repeat";
+            } else {
+                audio.muted = true;
+                mutebtn.style.background = "url('/assets/images/player/unmute_button.png') no-repeat";
+            }
+        }
+        function seek(event){
+            if(seeking){
+                seekslider.value = event.clientX - seekslider.offsetLeft;
+                seekto = audio.duration * (seekslider.value / 100);
+                audio.currentTime = seekto;
+            }
+        }
+        function setvolume(){
+            audio.volume = volumeslider.value / 100;
+        }
+        function seektimeupdate(){
+            var newtime = audio.currentTime * (100 / audio.duration);
+            seekslider.value = newtime;
+            var curmins = Math.floor(audio.currentTime / 60);
+            var cursecs = Math.floor(audio.currentTime - curmins * 60);
+            var durmins = Math.floor(audio.duration / 60);
+            var dursecs = Math.floor(audio.duration - durmins * 60);
+
+            if(cursecs < 10){cursecs = "0"+cursecs;}
+            if(dursecs < 10){dursecs = "0"+dursecs;}
+            if(curmins < 10){curmins = "0"+curmins;}
+            if(durmins < 10){durmins = "0"+durmins;}
+            curtimetext.innerHTML = curmins+":"+cursecs;
+            durtimetext.innerHTML = durmins+":"+dursecs;
+        }
+    }
+
+    window.addEventListener("load", initHGMPlayer);
+
+</script>
+{% endblock %}

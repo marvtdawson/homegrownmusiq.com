@@ -1,0 +1,39 @@
+body {
+  background-color: #545454;
+  background-size: cover;
+  padding-top: 50px;
+}
+.page-content {
+  padding: 60px 15px;
+}
+.row {
+  margin-bottom: 1.5em;
+}
+.row .index-top-row {
+  background-color: beige;
+}
+.main-page-welcome h1,
+.main-page-welcome p {
+  text-align: center;
+  color: #000;
+  font-weight: 200;
+}
+.thumb-circle .caption {
+  color: #333;
+  text-align: center;
+}
+.navbar-header .navbar-brand-img-size {
+  height: 50px;
+}
+.index-top-row {
+  background-color: beige;
+}
+.homepage-slideshow {
+  margin-top: 50px;
+}
+.hero-row {
+  margin-top: 50px;
+}
+.foot {
+  background-color: #232323;
+}

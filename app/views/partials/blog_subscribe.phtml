@@ -1,0 +1,30 @@
+<section class="vlog-global-asidebar">
+    <div class="vlog-subscribeform-wrapper">
+        <div class="blog-title-text">
+            <h2>SUBSCRIBE & <br>STAY CONNECTED</h2>
+        </div>
+        <div class="vlog-signup-form-wrapper">
+            <!-- Start Form wrapper -->
+            <form method="post" action="{{ processBlogForm }}" name="{{ formName }}">
+
+                <input type="hidden" name="csrf_token" value="{{ csrftoken }}" >
+
+                <div class="form_fields_wrapper">
+                    <label class="input-field-label-font">NAME:</label>
+                    <input type="text" name="memName"
+                           class="blog-input-form-fields" title="Name" >
+                </div>
+
+                <div class="form_fields_wrapper">
+                    <label class="input-field-label-font">EMAIL:</label>
+                    <input type="text" name="memEmail"
+                           class="blog-input-form-fields" title="Email" >
+                </div><br>
+
+                <div class="blog-submit-button-div">
+                    <input type="submit" value="{{ submitbutton }}" name="{{ submitbutton }}" class="blog-submit-button" >
+                </div>
+            </form>
+        </div><!-- #end form wrapper -->
+    </div>
+</section>

@@ -1,0 +1,126 @@
+<div class="member-profile-billboard-wrapper">
+    <div class="member-profile-billboard-img-container" id="upload-profile-billboard">
+        <a href="#">
+            <img class="member-profile-billboard-img" src="{{ billboard }}" title="" >
+            <div class="inner-billboard-image-form">
+                <div class="inner-billboard-image-form-text">
+                    Upload New Photo
+                </div>
+                <i class="fa fa-camera fa-3x" aria-hidden="true" ></i>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="member-profile-edit-bar">
+    <div class="member-profile-thumbnail-container">
+        <div class="member-profile-thumbnail-wrapper" id="upload-profile-thumbnail">
+            <a href="#">
+                <img class="member-profile-thumbnail-image" src="{{ thumbProfile }}">
+                <div class="inner-thumb-image-form">
+                    <i class="fa fa-camera fa-1x" aria-hidden="true" ></i>
+                </div>
+            </a>
+        </div>
+        <div class="member-profile-thumbnail-text">@{{ username }}</div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("div#thumbnail-image-form").hide();
+            $("div#billboard-image-form").hide();
+            $('div#gif-div').hide();
+            $('div#gif-dialog').hide();
+            $('div.inner-thumb-image-form').hide();
+            $('div.inner-billboard-image-form').hide();
+            $('div#file-type').hide();
+            $("div#file-ext").hide();
+            $("div#file-size").hide();
+
+            // show form option with mouse over effect
+            $("#upload-profile-billboard").on('mouseover', function(){
+                $('div.inner-billboard-image-form').show();
+            });
+            $("#upload-profile-billboard").on('mouseout', function(){
+                $('div.inner-billboard-image-form').hide();
+            });
+
+            // show form option with mouse over effect
+            $("#upload-profile-thumbnail").on('mouseover', function(){
+                $('div.inner-thumb-image-form').show();
+            });
+            $("#upload-profile-thumbnail").on('mouseout', function(){
+                $('div.inner-thumb-image-form').hide();
+            });
+
+            // upload billboard image function
+            $("#upload-profile-billboard").on('click', function () {
+
+                $("div#gif-dialog").dialog({
+                    width: 450,
+                    height: 200,
+                });
+                setTimeout(function() {
+                    $("div#gif-dialog").dialog('close')
+                },2500);
+
+
+                var showGif = setInterval(openUploadImageForm, 1000);
+                $("#gif-div").html('<img src="../../assets/images/miniLoader.gif" class="gif-div-image">').show(showGif);
+
+                function openUploadImageForm() {
+                    $('#gif-div').hide();
+                    $("div#gif-dialog").hide();
+                    $("div#billboard-image-form").dialog({
+                        width: 450,
+                        height: 200
+                    });
+                    stopInterval();
+                }
+
+                function stopInterval(){
+                    clearInterval(showGif);
+                    return false;
+                }
+            });
+
+            // upload thumb nail image function
+            $("#upload-profile-thumbnail").on('click', function () {
+
+                $("div#gif-dialog").dialog({
+                    width: 450,
+                    height: 200,
+                });
+                setTimeout(function() {
+                    $("div#gif-dialog").dialog('close')
+                },2500);
+
+                var showGif = setInterval(openUploadImageForm, 1000);
+                $("#gif-div").html('<img src="../../assets/images/miniLoader.gif" class="gif-div-image">').show(showGif);
+
+                function openUploadImageForm() {
+                    $('#gif-div').hide();
+                    $("div#thumbnail-image-form").dialog({
+                        width: 450,
+                        height: 200
+                    });
+                    stopInterval();
+                }
+
+                function stopInterval(){
+                    clearInterval(showGif);
+                    return false;
+                }
+            });
+        });
+    </script>
+    <div id="gif-dialog" title="Fetching Form...."><img src="../../assets/images/miniLoader.gif" class="gif-div-image"></div>
+    <div id="billboard-image-form" title="Upload Billboard Image">{% include '/partials/billboard-image-form.phtml' %}</div>
+    <div id="thumbnail-image-form" title="Upload Thumbnail Image">{% include '/partials/thumbnail-image-form.phtml' %}</div>
+    <div class="profile-edit-bar-content">
+        <div class="profile-edit-setting">
+            <a href="/appcms/cpanel/index">CPANEL</a>
+        </div>
+        <div class="profile-edit-setting">
+            <a href="/appcms/users/index">EDIT PROFILE</a>
+        </div>
+    </div>
+</div>

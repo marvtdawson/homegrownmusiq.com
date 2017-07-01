@@ -1,0 +1,19 @@
+<div class="row">
+    <form action="{{ processThumbnailForm }}" method="post" class="ajax" enctype="multipart/form-data" name="{{ thumbFormName }}">
+        <div class="cpan-input-wrapper">
+            <label>From Computer: </label>
+            <input type="file" id="upload_profile_thumb_image" name="upload_profile_thumb_image"
+                   class="input-form-fields" value="Upload Image" />
+        </div>
+        <div class="upload-image-button">
+            <input type="submit" value="Upload" class="cpan-forms-submit-button" name="save_SubmitBtn" id="save_SubmitBtn" />
+        </div>
+        <div class="show-validation-container">
+            <div id="gif-div"></div>
+            <div id="file-type"></div>
+            <div id="file-ext"></div>
+            <div id="file-size"></div>
+        </div>
+        <input type="hidden" name="csrf_token" value="{{ csrftoken }}" >
+    </form>
+</div>

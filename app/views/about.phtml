@@ -1,0 +1,11 @@
+{% extends "template/layout/basetemplate.phtml" %}
+{% block maincontent %}
+    <div class = "main-content-tier1-wrapper" >
+        <p> {% include "template/layout/banners/corepages_336x280_banner.phtml" %}  {{ pageContent }} </p >
+    </div >
+<p>This is some audio to be played
+<audio controls autoplay>
+    <source src="bangersickfreedl.mp3">
+</audio>
+</p>
+{% endblock %}

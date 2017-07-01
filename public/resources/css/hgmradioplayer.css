@@ -1,0 +1,205 @@
+@media(max-width: 1920px){
+    .radio-station-page-wrapper{
+        width:100%;
+        margin: 55px 0 0 0;
+    }
+
+    .radio-stations-style-wrapper{
+        width:25%;
+        float: left;
+        min-height: 580px;
+        box-shadow: 0 0 0 0 #545454;
+    }
+    .radio-stations-style-image-wrapper{
+        width:90%;
+        min-height: 300px;
+        border: 1px solid #545454;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px #545454;
+        margin: 10px auto 0;
+    }
+    .radio-stations-select-style-wrapper{
+        width:90%;
+        min-height: 280px;
+        border: 1px solid #545454;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px #545454;
+        margin: 10px auto 0;
+    }
+    .radio-station-artist-playing-wrapper{
+        width: 75%;
+        float: right;
+        min-height:580px;
+        margin-bottom: 35px;
+    }
+    .radio-station-now-playing-wrapper{
+        width: 70%;
+        min-height: 275px;
+        margin: 10px auto 0;
+        text-align: center;
+    }
+    .radio-station-artist-playing-content-wrapper{
+        width: 70%;
+        margin: 0 auto 0;
+    }
+
+    .radio-station-artist-pic-wrapper {
+        width: 35%;
+        margin: 0 auto 0;
+    }
+    .radio-station-artist-pic-size{
+        width: 100%;
+        min-height: 250px;
+        margin: 0 auto 0;
+    }
+    .radio-station-artist-info-wrapper {
+        width: 40%;
+        height: 250px;
+        border: 1px groove #008000;
+        background-color: #0c0c0c;
+        border-radius: 5px;
+        margin: 50px auto 0;
+    }
+
+
+    /* #### ARTIST PROFILE PLAYER ##### */
+    .artist-profile-music-player{
+        margin: 20px auto 0;
+        width: 90%;
+        height: 50px;
+        float: left;
+    }
+    .artist-profile-project-image{
+        color: #545454;
+        margin: 0 0 0 0;
+        position: relative;
+        height: 65px;
+        width: 10%;
+        float: left;
+    }
+    .artist-profile-control-wrapper{
+        margin: 35px 0 0 0;
+        float:left;
+        width: 40%;
+    }
+    .player-profile-icons-wrapper{
+        float: left;
+        margin: 15px 0 0 0;
+    }
+    audio::-internal-media-controls-download-button {
+        display:none;
+    }
+    audio::-webkit-media-controls-enclosure {
+        overflow:hidden;
+    }
+
+    audio::-webkit-media-controls-panel {
+        width: calc(100% + 30px); /* Adjust as needed */
+    }
+
+    /* #### START NOW PLAYING  #### */
+    .now-playing{
+        width: 100%;
+        margin: 4px auto 20px;
+        padding: 3px;
+        clear: both;
+        font-family: Arial sans-serif;
+        font-weight: bold;
+    }
+    .now-playing-text-wrapper{
+        width: 90%;
+        text-align: center;
+        margin: 0 auto 0;
+    }
+    .now-playing-inner-text{
+        color: #FFF;
+        font-size: 16px;
+    }
+    .now-playing-ArtistInfo-text{
+        color: #008000;
+        font-size: 16px;
+        clear: both;
+    }
+    /* #### START CONTROLLER #### */
+    .controls-container{
+        width: 100%;
+        height:50px;
+        bottom: 0;
+        display: inline-block;
+        border: 1px solid #545454;
+        -webkit-border-radius:7px;
+        -moz-border-radius:7px;
+        border-radius:7px;
+        position: relative;
+        z-index: 10;
+    }
+    .controls-wrapper{
+        width: 65%;
+        height:50px;
+        margin: 0 auto 0;
+        border: 1px solid #545454;
+        -webkit-border-radius:7px;
+        -moz-border-radius:7px;
+        border-radius:7px;
+        z-index: 10;
+    }
+    /* #### START PLAYER BUTTONS  #### */
+    button{ border:none; cursor:pointer; outline:none; }
+    #playpausebtn{
+        background:url('/assets/images/player/pause_button.png') no-repeat;
+        width:12px;
+        height:14px;
+        margin: 20px 0 0 20px;
+        float: left;
+    }
+    #mutebtn{
+        background:url('/assets/images/player/unmute_button.png') no-repeat;
+        width:5px;
+        height:14px;
+        margin: 22px 0 0 20px ;
+        float: left;
+        position: absolute;
+    }
+    .current-time-box{
+        display: block;
+        float: left;
+        width: 100px;
+        margin: 20px 0 0 50px ;
+        background: #000;
+        text-align: center;
+        color: #008000;
+        font-family: Arial sans-serif;
+        font-weight: bold;
+        font-size: 11px;
+    }
+    .duration-time-box{
+        display: block;
+        float: left;
+        background: #000;
+        text-align: center;
+        color: #008000;
+        font-family: Arial sans-serif;
+        font-weight: bold;
+        font-size: 11px;
+        margin: 20px 0 0 20px;
+    }
+    .seekslider-wrapper{
+        width: 180px;
+        display: block;
+        float: left;
+        margin: 19px 0 0 20px;
+        color: white;
+    }
+    #seekslider{
+
+    }
+    .volumslider-wrapper{
+        width: 180px;
+        display: block;
+        float: left;
+        margin: 20px 0 0 50px ;
+    }
+    #volumeslider{
+
+    }
+}

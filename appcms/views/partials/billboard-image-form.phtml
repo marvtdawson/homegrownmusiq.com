@@ -1,0 +1,43 @@
+<div class="row">
+    <form action="{{ processBillboardForm }}" method="post" class="ajax" enctype="multipart/form-data" name="{{ billboardFormName }}">
+        <div class="cpan-input-wrapper">
+            <label>From Computer: </label>
+            <input type="file" id="upload_profile_billboard_image" name="upload_profile_billboard_image"
+                   class="input-form-fields" value="Upload Image" />
+        </div>
+        <div class="upload-image-button">
+            <input type="submit" value="Upload" class="cpan-forms-submit-button" name="save_SubmitBtn" id="save_SubmitBtn" />
+        </div>
+        <div class="show-validation-container">
+            <div id="gif-div"></div>
+            <div id="file-type"></div>
+            <div id="file-ext"></div>
+            <div id="file-size"></div>
+        </div>
+        <input type="hidden" name="csrf_token" value="{{ csrftoken }}" >
+    </form>
+</div>
+<script>
+    $(document).ready(function(){
+        $('input#save_SubmitBtn').on('click', function(){
+            var billboardimage = $('#upload_profile_billboard_image').val();
+        });
+    });
+    /*function showHint(str) {
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        } else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "/appcms/profile/uploadbillboard=" + str, true);
+            xmlhttp.send();
+        }
+    }*/
+
+</script>
+

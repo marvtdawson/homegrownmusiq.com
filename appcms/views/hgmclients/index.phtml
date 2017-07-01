@@ -1,0 +1,65 @@
+{% extends "template/layout/indiememberprofiletemplate.phtml" %}
+{% block cpanelcontent  %}
+{% include '/partials/indie-member-profile-billboard.phtml' %}
+<div class="artist-projects-thumb-slider">
+    <h1 class="home-page-h1">NEW CUSTOMERS</h1>
+    <div class="artist-projects-thumb-slider-prev-button">
+        <input type="button" id="prev1" value="PREV">
+    </div>
+    <div class="cycle-slideshow"
+         data-cycle-fx=carousel
+         data-cycle-carousel-visible=5
+         data-cycle-timeout=6000
+         data-cycle-next="#next1"
+         data-cycle-prev="#prev1">
+        {% for cdThumbs in cdCovers %}
+        <img class="cycle-slideshow-img" src='"{{ cdThumbs }}"' >
+        {% endfor %}
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image1.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image2.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image3.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image4.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image5.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image6.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image7.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image8.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image9.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image10.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image11.jpg">
+        <img class="cycle-slideshow-img" src="/assets/images/newmembers/image12.jpg">
+    </div>
+    <div class="artist-projects-thumb-slider-next-button">
+        <input type="button" id="next1" value="NEXT">
+    </div>
+</div>
+<div class="member-content-wrapper">
+    <div class="member-profile-widget-container">
+        <div class="profile-call-to-action">
+            <div class="profile-call-to-action-image">
+                <img src="" title="Own Your Name">
+            </div>
+            <a href="#">
+                <div class="profile-call-to-action-button">
+                    <div class="profile-call-to-action-text">
+                        NEW CUSTOMER REPORT
+                    </div>
+                </div>
+            </a>
+        </div>
+       <hr>
+        <div class="widget-ad-banner">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- cpanel-ad-banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3000506446152743"
+                 data-ad-slot="4361994840"
+                 data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <div class="member-profile-content">{{ siteUrl }}</div>
+</div>
+{% endblock %}
