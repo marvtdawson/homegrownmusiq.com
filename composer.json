@@ -46,6 +46,10 @@
     }
   },
   "require": {
-    "twig/twig": "~1.0"
+    "twig/twig": "~1.0",
+    "happyworm/jPlayer": "2.*"
+  },
+  "config": {
+    "component-dir": "public/resources/jplayer"
   }
 }

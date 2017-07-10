@@ -180,25 +180,24 @@
         </div>
     </div>
     <div class="member-profile-content">
+        {% include '/partials/jplayer.phtml' %}
         <div class="artist-profile-music-player">
             <div class="artist-profile-project-image">Artist Image</div>
             <div class="artist-profile-control-wrapper">
+                <!--audio src="../../m3Mb3rz/{{ userId }}/media/music/projects/bangersickfreedl.mp3" controls autoplay-->
                 <audio controls autoplay>
-                    <source src="../m3Mb3rz/{{ userId }}/media/music/projects/bangersickfreedl.mp3" type="audio/mpeg">
-                    <!--source src="/m3Mb3rz/1/media/music/projects/bangersickfreedl.mp3" type="audio/mpeg"-->
+                    <source src="bangersickfreedl.mp3" type="audio/mpeg">
                 </audio>
             </div>
         </div>
     </div>
     <script>
         $(document).ready(function(){
-
             // check profile and billboard images error messages
            /* var errorMsg = {{ errorMsg }}
             if(errorMsg !== ""){
                 alert(errorMsg);
             }*/
-
 
             /*if(errorMsg === "Sorry, file already exists."){
 
