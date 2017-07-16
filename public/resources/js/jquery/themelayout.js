@@ -7,6 +7,8 @@ $(document).ready(function(){
      $("#open-nav-login-form").dialog();
      });
 
+
+
 });
 
 /* open overlay with nav */
@@ -19,11 +21,4 @@ function closeNav() {
     document.getElementById("open-overlay").style.height = "0%";
     $("div#open-nav-login-form").hide();
 }
-
-function changelayoutcolor($newcolor)
-{
-    var newColor = $(".mast-head").attr("background-color: <?= ?>");
-    $(".mast-head").css("background-color", "{{ backgroundcolor }}");
-}
-
 

@@ -47,7 +47,8 @@
   },
   "require": {
     "twig/twig": "~1.0",
-    "happyworm/jPlayer": "2.*"
+    "happyworm/jPlayer": "2.*",
+    "phpunit/phpunit" : "^6.2"
   },
   "config": {
     "component-dir": "public/resources/jplayer"

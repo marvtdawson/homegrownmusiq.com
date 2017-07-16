@@ -12,8 +12,27 @@
                 <label>Choose Layout Color: </label>
                 <input type="color" name="layout-color" id="layout-color">
             </div>
-            <input type="submit" name="{{ submitButton }}" value="Change Color" class="cpan-forms-submit-button" />
+            <input type="submit" id="editlayoutProcessTheme_Submit" name="{{ submitButton }}" value="Change Color" class="cpan-forms-submit-button" />
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#editlayoutProcessTheme_Submit").on('click', layoutColor());
+
+        function layoutColor(){
+
+            $(this).keyup(function(){
+                //var editButton = $(".master-head-wrapper").removeClass();
+                alert('You pressed the edit button');
+            });
+
+            //var newColor = $(".mast-head").attr("class");
+            //$(".master-head-wrapper").removeClass();
+            //$(".mast-head-wrapper").addClass("background-color", "{{ newheadfootColor }}" );
+        }
+    });
+
+</script>
 {% endblock %}

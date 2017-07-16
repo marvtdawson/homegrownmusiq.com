@@ -13,16 +13,14 @@ use appcms\controller\Userprofile;
 class MusicAbstract
 {
     public $path,
-        $artistMusicPath;
+        $artistMusicPath,
+        $artistMusic;
 
     public function __construct()
     {
         $loggedInUserName = new Userprofile();
         $this->username = $loggedInUserName->getLoggedInUserInfo()->regMem_Name;
         $this->userId =  $loggedInUserName->getLoggedInUserInfo()->id;
-
-        //$this->path = 'm3Mb3rz/'. $this->userId . '/media/music/projects/';
-
     }
 
     public function setPath($path){
@@ -31,7 +29,6 @@ class MusicAbstract
         if(substr($path, -1) === '/'){
             $path = substr($path, 0, -1);
         }
-        //$this->path = $path;
     }
 
     /**
@@ -44,25 +41,32 @@ class MusicAbstract
 
     public function getMusic($path, $extensions = array('mp3', 'ogg', 'wav')){
 
-        echo $path;
-        $artistMusic = $this->getDirectory(scandir($path));
+        if($path !== null ){
 
-        foreach($artistMusic as $index => $music){
+            echo 'You have a path! ' . $path;
 
-            $extension = explode('.', $music);
-            $musicFile_ext = strtolower(end($extension));
+            $artistMusic = $this->getDirectory($path); // array
+            $this->artistMusicPath = $path;
 
-            if(!in_array($musicFile_ext, $extensions)){
-                unset($artistMusic[$index]);
-            }else{
-                $artistMusic[$index] = array(
-                    'full' => $path . '/' . $music,
-                    //'thumb' => $path . '/' . $music
-                );
+            foreach($this->artistMusicPath as $index => $music){
+
+                $extension = explode('.', $music);
+                $musicFile_ext = strtolower(end($extension));
+
+                if(!in_array($musicFile_ext, $extensions)){
+                    unset($this->artistMusicPath[$index]);
+                }else{
+                    $this->artistMusic[$index] = array(
+                        'full' => $path . '/' . $music,
+                        //'thumb' => $path . '/' . $music
+                    );
+                }
             }
+        }else{
+            echo 'No Path Marvo you still fucked!';
         }
         // check if there are images before outputting
-        return (count($artistMusic)) ? $artistMusic : false;
+        return (count($this->artistMusic)) ? $this->artistMusic : false;
     }
 
 }

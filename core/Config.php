@@ -18,7 +18,8 @@ const SITE_NAME = 'HOME GROWN MUSIQ';
 const SITE_DOMAIN = 'www.homegrownmusiq.com';
 const SITE_LOGO = '/assets/images/logo.jpg';
 const APP_ROOT = __DIR__;
-const BASE_URL = 'http://localhost/projects/homegrownmusiq.dev'; // dev environment
+const BASE_URL = 'homegrownmusiq.dev'; // dev environment
+    const MEMBER_ASSET_FILE_DIR = 'm3Mb3rz/';
 const CORE_PAGES_KEYWORDS = 'corePages';
 const CPANEL_PAGES_KEYWORDS = 'cPanPages';
 
@@ -274,7 +275,7 @@ const APP_CONFIRM_ACTIVATION_ACCOUNT_PAGE_TITLE = 'Activation Confirmed';
 const APP_CONFIRM_ACTIVATION_ACCOUNT_PAGE_PRETTY_URI = '/confirmMessages/activationIncomplete';
 
 
-const MEMBER_ASSET_FILE_DIR = '../m3Mb3rz/';
+
 
 #################### CSRF TOKEN ####################################
 /**

@@ -7,11 +7,11 @@
  */
 
 namespace library\API\Client;
-
+use library\API\Request;
+use library\API\Received;
 
 class Streams
 {
-
     const BYTES_TO_READ = 4096;
 
     public static function send(Request $request)

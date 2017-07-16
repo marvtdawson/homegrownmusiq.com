@@ -1,2 +1,14 @@
 /m3Mb3rz
 siteNotes.txt
+/tests
+/vendor/phpdocumentor
+/vendor/phpmailer
+/vendor/phpspec
+/vendor/phpunit
+/vendor/robloach
+/vendor/sebastian
+/vendor/theseer
+/vendor/kriswallsmith
+/vendor/myclabs
+/vendor/webmozart
+

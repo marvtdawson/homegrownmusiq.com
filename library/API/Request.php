@@ -4,6 +4,11 @@
  * User: katan-hgmhub
  * Date: 3/16/17
  * Time: 4:57 PM
+ *
+ * This class accept parameters when we wish to generate a request,
+ * or, alternatively, populate properties with incoming request information
+ * when implementing a server that accepts requests:
+ *
  */
 
 namespace library\API;
@@ -11,8 +16,11 @@ namespace library\API;
 class Request extends AbstractHttp
 {
     public function __construct(
-        $uri = NULL, $method = NULL, array $headers = NULL,
-        array $data = NULL, array $cookies = NULL)
+                        $uri = NULL,
+                        $method = NULL,
+                        array $headers = NULL,
+                        array $data = NULL,
+                        array $cookies = NULL)
     {
         if (!$headers) $this->headers = $_SERVER ?? array();
         else $this->headers = $headers;
@@ -27,5 +35,12 @@ class Request extends AbstractHttp
         else $this->cookies = $cookies;
         $this->setTransport();
     }
+
+
+    public function getUri(){
+
+    }
+
+
 
 }

@@ -60,13 +60,15 @@ class Profile extends Controller
         $cdCoverFileName,
         $cdCoverImagesDir,
         $artistMusicProjectsDir,
-        $errMsg;
+        $errMsg,
+        $hotTrakz,
+        $trakz,
+        $artistMusicTrack;
 
     public function __construct()
     {
         // connect to db
         $this->_db = Model::getInstance();
-
     }
 
 
@@ -98,7 +100,7 @@ class Profile extends Controller
 
         // set path to music tracks and thumb images
         $this->cdCoverImagesDir = Config::MEMBER_ASSET_FILE_DIR . $this->userId . '/media/music/projects/thumbs/';
-        $this->artistMusicProjectsDir = Config::MEMBER_ASSET_FILE_DIR . $this->userId . '/media/music/projects';
+        $this->artistMusicProjectsDir = Config::MEMBER_ASSET_FILE_DIR . $this->userId . '/media/music/projects/';
 
         //$this->hgmDomain = getenv('HTTP_HOST');
         //$this->hgmRelPath = '../public_html/' . $this->hgmDomain;
@@ -119,9 +121,6 @@ class Profile extends Controller
 
     public function indexAction()
     {
-        echo $this->cdCoverImagesDir . "<br>";
-        echo $this->artistMusicProjectsDir . '<br>';
-
         View::renderTemplate('memberprofile/index.phtml', [
             'tabTitle' => 'Member Profile',
             'pageTitle' => 'Member Profile',
@@ -140,7 +139,7 @@ class Profile extends Controller
             'billboard' => $this->billboard,
             'thumbProfile' => $this->thumbProfile,
             'siteUrl' => $this->hgmRelPath,
-            'cdThumbCovers' => $this->getCdCoversAction(),
+            //'cdThumbCovers' => $this->getCdCoversAction(),
             'artistMusicTracks' => $this->getArtistProjectsAction(),
             'stepsToOwn' => 'step2Completed',
             //'errorMsg' => $this->uploadthumbnailAction()->errMsg,
@@ -386,9 +385,18 @@ class Profile extends Controller
         $artistMusicProjects = new MusicAbstract();
         $artistMusicProjects->setPath($this->artistMusicProjectsDir);
 
-        $artistMusicTrack = $artistMusicProjects->getMusic($this->artistMusicProjectsDir, array('mp3'));
-        echo '<pre>', print_r($artistMusicTrack), '</pre>';
-        return $artistMusicTrack;
-    }
+        $this->artistMusicTrack = $artistMusicProjects->getMusic($this->artistMusicProjectsDir, array('mp3'));
 
+        if(is_array($this->artistMusicTrack)){
+            echo 'Yes this is an array Marvo.';
+            $hotTrakz = '';
+            foreach($this->artistMusicTrack as $key => $this->hotTrakz){
+                echo '<pre>', print_r($this->hotTrakz), '</pre>';
+                echo 'Show each how track ' . $this->hotTrakz;
+            }
+        }else{
+            echo 'Fuck No!';
+        }
+        return true;
+    }
 }

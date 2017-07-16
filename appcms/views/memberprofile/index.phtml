@@ -185,10 +185,14 @@
             <div class="artist-profile-project-image">Artist Image</div>
             <div class="artist-profile-control-wrapper">
                 <!--audio src="../../m3Mb3rz/{{ userId }}/media/music/projects/bangersickfreedl.mp3" controls autoplay-->
+                {% for traks in artistMusicTracks %}
                 <audio controls autoplay>
-                    <source src="bangersickfreedl.mp3" type="audio/mpeg">
+                    <!--source src="bangersickfreedl.mp3" type="audio/mpeg"-->
+                    <source src="{{ artistMusicTracks }}" type="audio/mpeg">
                 </audio>
+                {% endfor %}
             </div>
+            <div>{{ artistMusicTracks }}</div>
         </div>
     </div>
     <script>

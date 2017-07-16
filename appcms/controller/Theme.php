@@ -94,6 +94,9 @@ class Theme extends Controller
 
     }
 
+    /**
+     * Font form view
+     */
     public function editfont(){
         View::renderTemplate('Theme/editfont.phtml', [
             'tabtitle' => Config::APP_CMS_THEME_EDIT_FONT_PAGE_TITLE,
@@ -114,10 +117,16 @@ class Theme extends Controller
     }
 
 
+    /**
+     * Process new font style
+     */
     public function processfont(){
         echo 'Processing Font Style Now!';
     }
 
+    /**
+     * Layout form view
+     */
     public function layoutcolor(){
         View::renderTemplate('Theme/editlayout.phtml', [
             'tabtitle' => Config::APP_CMS_THEME_EDIT_LAYOUT_COLOR_PAGE_TITLE,
@@ -138,11 +147,13 @@ class Theme extends Controller
         ],  'appcms/views');
     }
 
+    /**
+     * Process new layout color for header and footer
+     */
     public function processlayoutcolor(){
 
         echo 'Processing Layout Color Now!';
 
-        // update user data
         // check if the input data via post or get method exist
         if(Input::exists()) {
 
@@ -157,11 +168,9 @@ class Theme extends Controller
             ));
 
             if ($validation->passed()) {
-
                 try {
                     $this->curruserInfo->update($this->_tableName, array(  // update user memberprofile in table
-                        'newlayoutColor' => Input::get('layout-color'),
-                        'currentlayoutColor' => Input::get('layout-color')
+                        'newlayoutColor' => Input::get('layout-color')
                     ));
 
                     Redirect::to(Config::APP_CMS_THEME_EDIT_LAYOUT_COLOR_PRETTY_URI);
@@ -169,15 +178,17 @@ class Theme extends Controller
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            } else { // loop thru each validation error that is return
+            } else { // loop through each validation error that is return
                 foreach ($validation->errors() as $error) {
                     echo $error, "<br>";
                 }
             }
-            //}
         }
     }
 
+    /**
+     * Page background view
+     */
     public function pagebackground(){
 
         View::renderTemplate('Theme/editpagebackgroundcolor.phtml', [
@@ -199,6 +210,9 @@ class Theme extends Controller
 
     }
 
+    /**
+     * Process new page background color selection
+     */
     public function processpagebackground(){
 
         echo 'Processing Page Background Color Now!';

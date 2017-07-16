@@ -7,7 +7,7 @@
  */
 
 namespace library\Theme;
-
+use library\Models\Model;
 
 class Sitetheme
 {

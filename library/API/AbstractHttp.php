@@ -4,13 +4,20 @@
  * User: katan-hgmhub
  * Date: 3/16/17
  * Time: 4:40 PM
+ *
+ * Define common classes to represent request and response information.
+ * First, we will start with an abstract class
+ * that has methods and properties needed for either a request or response:
+ *
  */
 
 namespace library\API;
 
-
 class AbstractHttp
 {
+    /**
+     * Set and define constants the represent HTTP information
+     */
     const METHOD_GET = 'GET';
     const METHOD_POST = 'POST';
     const METHOD_PUT = 'PUT';
@@ -25,6 +32,11 @@ class AbstractHttp
     const STATUS_401 = '401';
     const STATUS_500 = '500';
 
+    /**
+     * @var
+     * Define properties that are needed for either a request or a response:
+     *
+     */
     protected   $uri; // i.e. http://xxx.com/yyy
     protected   $method; // i.e. GET, PUT, POST, DELETE
     protected   $headers; // HTTP headers
@@ -33,7 +45,12 @@ class AbstractHttp
     protected   $transport; // i.e. http or https
     protected   $data = array();
 
-
+    /**
+     * Define getters and setters for properties:
+     *
+     * @param $method
+     *
+     */
     public function setMethod($method)
     {
         $this->method = $method;
@@ -43,6 +60,15 @@ class AbstractHttp
         return $this->method ?? self::METHOD_GET;
     }
 
+
+    /**
+     * Create getters and setters that require access using a key:
+     *
+     * Define methods that have properties that require access using a key:
+     *
+     * @param $key
+     * @param $value
+     */
     public function setHeaderByKey($key, $value)
     {
         $this->headers[$key] = $value;
@@ -59,6 +85,16 @@ class AbstractHttp
     {
         return $this->metaData[$key] ?? NULL;
     }
+
+    /**
+     * In some cases, the request will require parameters. We will assume that the
+     * parameters will be in the form of a PHP array stored in the $data property. We
+     * can then build the request URL using the http_build_query() function:
+     *
+     * @param $uri
+     * @param array|NULL $params
+     */
+
     public function setUri($uri, array $params = NULL)
     {
         $this->uri = $uri;
@@ -67,10 +103,22 @@ class AbstractHttp
             $this->uri .= '?' . http_build_query($params);
         }
     }
+
     public function getDataEncoded()
     {
         return http_build_query($this->getData());
     }
+
+    public function getTransport(){
+
+    }
+
+    /**
+     * Set $transport based on the original request
+     *
+     * @param null $transport
+     *
+     */
     public function setTransport($transport = NULL)
     {
         if ($transport) {
