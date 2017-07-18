@@ -1,6 +1,6 @@
 /m3Mb3rz
 siteNotes.txt
-/tests
+# /tests
 /vendor/phpdocumentor
 /vendor/phpmailer
 /vendor/phpspec
